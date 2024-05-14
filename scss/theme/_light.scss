@@ -1,0 +1,15 @@
+@use "../abstracts";
+html {
+    --text-color: #1a162e;
+    --icon-color: brightness(0) saturate(100%) invert(9%) sepia(21%)
+        saturate(1475%) hue-rotate(210deg) brightness(94%) contrast(99%);
+    --body-bg-color: #f6f6f6;
+    --header-bg-color: #eeeeee;
+    --top-act-bg-color: #fff;
+    --top-act-shadow: rgba(237, 237, 246, 0.2);
+    --separate-bg-color: #ededf6;
+
+    @include abstracts.breakpoint(xl) {
+        --header-bg-color: #fff;
+    }
+}
