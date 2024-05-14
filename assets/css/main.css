@@ -1219,6 +1219,7 @@ html.dark {
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(18%)
       saturate(671%) hue-rotate(185deg) brightness(94%) contrast(89%);
+  --top-menu-border-color: #171c28;
 }
 
 html {
@@ -1232,6 +1233,7 @@ html {
   --separate-bg-color: #ededf6;
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+  --top-menu-border-color: #d2d1d6;
 }
 @media (max-width: 1199.98px) {
   html {
@@ -1397,13 +1399,13 @@ html {
   padding-top: 54px;
   position: absolute;
   left: 0;
-  opacity: 0;
-  visibility: hidden;
+  width: min(1240px, 100%);
   transition: opacity 0.25s, visibility 0.25s;
 }
 .dropdown__inner {
   position: relative;
   padding: 30px;
+  height: min(582px, 100vh - 158px);
   border-radius: 20px;
   background: var(--dropdown-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -1415,6 +1417,62 @@ html {
   left: var(--arrow-left-pos);
   transform: translateX(-50%);
   filter: var(--dropdown-arrow-color);
+}
+
+.top-menu {
+  height: 100%;
+}
+.top-menu__main {
+  width: 292px;
+  height: 100%;
+  border-right: 1px solid var(--top-menu-border-color);
+}
+
+.menu-column {
+  display: flex;
+  column-gap: 14px;
+}
+.menu-column__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+.menu-column__icon-1 {
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+}
+.menu-column__icon-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+}
+.menu-column__content {
+  flex-grow: 1;
+}
+.menu-column__heading {
+  margin-top: 4px;
+  color: #1a162e;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+}
+.menu-column__list {
+  margin-top: 19px;
+}
+.menu-column__link {
+  display: block;
+  padding: 7px 0;
+  font-size: 1.4rem;
+  line-height: 1.42; /* 142.857% */
+}
+.menu-column__link:hover {
+  color: #0071dc;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */
