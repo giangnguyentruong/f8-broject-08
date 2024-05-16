@@ -1,4 +1,5 @@
 @use "../abstracts";
+
 html {
     --text-color: #1a162e;
     --icon-color: brightness(0) saturate(100%) invert(9%) sepia(21%)
@@ -11,6 +12,10 @@ html {
 
     @include abstracts.breakpoint(xl) {
         --header-bg-color: #fff;
+    }
+
+    @include abstracts.breakpoint(lg) {
+        --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 
     // Dropdown

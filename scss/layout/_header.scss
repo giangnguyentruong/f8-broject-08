@@ -9,6 +9,10 @@
     z-index: 1;
     top: 0;
     background: var(--header-bg-color);
+
+    @include abstracts.breakpoint(lg) {
+        box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+    }
 }
 
 .top-bar {
@@ -35,7 +39,7 @@
 }
 
 .navbar {
-    margin-left: 144px;
+    margin-left: 129px;
 
     @include abstracts.breakpoint(xl) {
         margin-left: 50px;
@@ -49,12 +53,6 @@
     }
 
     &__item {
-        &:first-child a {
-            padding-left: 0;
-        }
-        &:last-child a {
-            padding-right: 0;
-        }
         &:hover .dropdown {
             opacity: 1;
             visibility: visible;

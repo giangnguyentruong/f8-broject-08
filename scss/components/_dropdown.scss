@@ -1,16 +1,19 @@
+@use "../abstracts";
+
 .dropdown {
     padding-top: 54px;
     position: absolute;
     left: 0;
     width: min(1240px, 100%);
-    // opacity: 0;
-    // visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.25s, visibility 0.25s;
 
     &__inner {
+        --inner-padding: 30px;
+
         position: relative;
-        padding: 30px;
-        height: min(582px, 100vh - 158px);
+        padding: var(--inner-padding);
         border-radius: 20px;
         background: var(--dropdown-bg-color);
         box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -27,11 +30,13 @@
 }
 
 .top-menu {
-    height: 100%;
+    --main-column-width: 292px;
 
+    position: relative;
     &__main {
-        width: 292px;
-        height: 100%;
+        overflow-y: auto;
+        width: var(--main-column-width);
+        height: calc(min(582px, 100vh - 158px) - 50px);
         border-right: 1px solid var(--top-menu-border-color);
     }
 }
@@ -40,15 +45,23 @@
     display: flex;
     column-gap: 14px;
 
+    + .menu-column {
+        margin-top: 20px;
+    }
+
     &__icon {
         position: relative;
         flex-shrink: 0;
         width: 36px;
         height: 36px;
+
+        @include abstracts.breakpoint(xl) {
+            display: none;
+        }
     }
 
     &__icon-1 {
-        object-fit: cover;
+        object-fit: contain;
         width: 30px;
         height: 30px;
     }
@@ -57,9 +70,10 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        object-fit: cover;
+        object-fit: contain;
         width: 24px;
         height: 24px;
+        filter: var(--menu-column__icon-color);
     }
 
     &__content {
@@ -78,15 +92,35 @@
         margin-top: 19px;
     }
 
+    &__item:hover > &__link {
+        color: #0071dc;
+        font-weight: 500;
+    }
+
+    &__item {
+        &:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
     &__link {
         display: block;
         padding: 7px 0;
         font-size: 1.4rem;
         line-height: 1.42; /* 142.857% */
-
-        &:hover {
-            color: #0071dc;
-            font-weight: 500;
-        }
     }
+}
+
+.sub-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--inner-padding);
+    position: absolute;
+    inset: 0 0 0 var(--main-column-width);
+    padding-left: var(--inner-padding);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
 }
