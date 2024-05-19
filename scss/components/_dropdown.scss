@@ -1,6 +1,7 @@
 @use "../abstracts";
 
 .dropdown {
+    color: var(--dropdown-text-color);
     padding-top: 54px;
     position: absolute;
     left: 0;
@@ -82,7 +83,6 @@
 
     &__heading {
         margin-top: 4px;
-        color: #1a162e;
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.5; /* 150% */
@@ -92,16 +92,16 @@
         margin-top: 19px;
     }
 
-    &__item:hover > &__link {
-        color: #0071dc;
-        font-weight: 500;
-    }
-
     &__item {
-        &:hover .sub-menu {
+        &--active .sub-menu {
             opacity: 1;
             visibility: visible;
         }
+    }
+    &__item--active > &__link,
+    &__item:hover > &__link {
+        color: #0071dc;
+        font-weight: 500;
     }
 
     &__link {
