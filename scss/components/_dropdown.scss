@@ -178,5 +178,12 @@
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+
+        @include abstracts.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+        }
     }
 }
