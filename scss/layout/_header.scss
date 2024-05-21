@@ -92,14 +92,22 @@
     }
 
     &__item {
-        &:hover .dropdown,
-        &:hover .sub-menu--not-main {
+        &:hover .dropdown {
             opacity: 1;
             visibility: visible;
         }
 
         @include abstracts.breakpoint(lg) {
             width: 100%;
+            &:hover .dropdown {
+                display: none;
+            }
+
+            &--active {
+                .dropdown {
+                    display: block !important;
+                }
+            }
         }
     }
 
@@ -122,6 +130,15 @@
 
     &__arrow {
         margin-top: 3px;
+
+        @include abstracts.breakpoint(lg) {
+            rotate: -90deg;
+            transition: rotate 0.25s;
+        }
+    }
+
+    &__item--active &__arrow {
+        rotate: 0deg;
     }
 }
 
