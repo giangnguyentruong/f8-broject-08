@@ -10,11 +10,11 @@ html {
     --top-act-shadow: rgba(237, 237, 246, 0.2);
     --separate-bg-color: #ededf6;
 
-    @include abstracts.breakpoint(xl) {
+    @include abstracts.screen(xl) {
         --header-bg-color: #fff;
     }
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 
@@ -25,5 +25,5 @@ html {
 
     // Sidebar
     --sidebar-bg: #fff;
-    --sidebar-shadow: rgba(200, 200, 200, 0.40);
+    --sidebar-shadow: rgba(200, 200, 200, 0.4);
 }
