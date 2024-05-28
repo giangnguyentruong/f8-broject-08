@@ -107,12 +107,12 @@ $gutters: (
     @each $i, $ratio in $gutters {
         .g#{$infix}-#{$i},
         .gx#{$infix}-#{$i} {
-            --grid-gutter-x: #{$grid-gutter-width * $ratio} !important;
+            --grid-gutter-x: #{$grid-gutter-width * $ratio};
         }
 
         .g#{$infix}-#{$i},
         .gy#{$infix}-#{$i} {
-            --grid-gutter-y: #{$grid-gutter-width * $ratio} !important;
+            --grid-gutter-y: #{$grid-gutter-width * $ratio};
         }
     }
 }

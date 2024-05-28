@@ -5,6 +5,11 @@
   background: var(--product-card-bg);
   box-shadow: 0px 20px 60px 10px var(--product-card-shadow);
 }
+@media (max-width: 767.98px) {
+  .product-card {
+    padding: 10px;
+  }
+}
 .product-card__img-wrap {
   position: relative;
   padding-top: 100%;
@@ -24,6 +29,12 @@
 }
 .product-card__title {
   margin-top: 16px;
+}
+@media (max-width: 767.98px) {
+  .product-card__title a {
+    display: inline-block;
+    width: 100%;
+  }
 }
 .product-card__title, .product-card__price, .product-card__score {
   font-size: 1.6rem;
