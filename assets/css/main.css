@@ -169,10 +169,12 @@ textarea,
 select,
 a,
 img {
+  padding: 0;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   outline: none;
+  border: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -1394,7 +1396,7 @@ html {
 
 .header {
   position: sticky;
-  z-index: 1;
+  z-index: 10;
   top: 0;
   background: var(--header-bg-color);
 }
@@ -1989,6 +1991,7 @@ html {
   height: 50px;
   border-radius: 50%;
   box-shadow: 0px 20px 60px rgba(124, 124, 124, 0.2);
+  user-select: none;
 }
 .like-btn:not(.like-btn--liked) .like-btn__icon--liked {
   display: none;
@@ -1998,6 +2001,40 @@ html {
 }
 .like-btn__icon--liked {
   margin-top: 6px;
+}
+
+.btn {
+  padding: 0 20px;
+  height: 46px;
+  background: #9e9da8;
+  border-radius: 6px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.btn + .btn {
+  margin-left: 20px;
+}
+.btn--text {
+  color: #9e9da8;
+  background: transparent;
+  font-weight: 400;
+}
+.btn--primary {
+  background: #ffb700;
+}
+.btn--outline {
+  background: transparent;
+  border: 1px solid #b9babe;
+}
+.btn--rounded {
+  border-radius: 99px;
+}
+.btn--disabled, .btn[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn:hover {
+  opacity: 0.9;
 }
 
 .product-card {
@@ -2064,12 +2101,18 @@ html {
 .filter {
   position: absolute;
   z-index: 1;
-  top: 50px;
+  top: 63px;
   right: 0;
   padding: 30px;
   border-radius: 20px;
   background: var(--filter-form-bg);
   filter: drop-shadow(0px 40px 90px var(--filter-form-shadow));
+}
+.filter__arrow {
+  position: absolute;
+  top: -17px;
+  right: 17px;
+  height: 20.5px;
 }
 .filter__heading {
   font-size: 2.2rem;
@@ -2120,17 +2163,38 @@ html {
 .filter__form-slider::after {
   left: var(--max-value);
 }
-.filter__form-input, .filter__form-select-wrap {
+.filter__form-text-input, .filter__form-select-wrap {
   border-radius: 6px;
   border: 1px solid #d2d1d6;
 }
-.filter__form-input {
+.filter__form-text-input {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  width: 334px;
+  height: 44px;
+  overflow: hidden;
+}
+.filter__form-text-input--small {
   width: 121px;
   height: 36px;
   padding: 0 12px;
+}
+.filter__form-text-input--small .filter__form-input {
   font-size: 1.4rem;
+}
+.filter__form-input {
+  width: 100%;
   font-weight: 500;
-  line-height: 1.42; /* 142.857% */
+  font-size: 1.5rem;
+  line-height: 1.46; /* 146.667% */
+}
+.filter__form-input::placeholder {
+  font-weight: 400;
+  color: #9e9da8;
+}
+.filter__form-input-icon {
+  margin-left: 12px;
 }
 .filter__form-select-wrap {
   display: flex;
@@ -2178,6 +2242,20 @@ html {
   width: 1px;
   background: #eee;
 }
+.filter__footer {
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+.filter__cancel, .filter__submit {
+  height: 38px;
+  padding: 0 10px;
+}
+.filter__cancel {
+  font-size: 1.5rem;
+}
+.filter__submit {
+  font-size: 1.4rem;
+}
 
 .home__container {
   margin-top: 40px;
@@ -2206,7 +2284,7 @@ html {
   }
 }
 .home__row {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
