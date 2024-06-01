@@ -33,6 +33,7 @@
 
 .navbar {
     margin-left: 129px;
+    color: var(--navbar-text-color);
 
     @include abstracts.screen(xl) {
         margin-left: 50px;
