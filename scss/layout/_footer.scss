@@ -3,6 +3,7 @@
 .footer {
     padding: 50px 0;
     background: var(--footer-bg-color);
+    font-size: 1.4rem;
 
     &__row {
         display: grid;
@@ -19,6 +20,41 @@
 
         @include abstracts.screen(sm) {
             grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__col {
+        &:last-child {
+            @include abstracts.screen(lg) {
+                grid-column: 2 / -1;
+            }
+
+            @include abstracts.screen(md) {
+                grid-column: initial;
+            }
+        }
+
+        &:nth-child(3) {
+            @include abstracts.screen(md) {
+                grid-row-start: 1;
+                grid-column: 2 / -1;
+            }
+
+            @include abstracts.screen(sm) {
+                grid-row-start: inherit;
+                grid-column: initial;
+            }
+        }
+
+        &:nth-child(5) {
+            @include abstracts.screen(md) {
+                grid-column: 2 span;
+            }
+
+            @include abstracts.screen(sm) {
+                grid-column: initial;
+            }
         }
     }
 
@@ -51,12 +87,20 @@
         border: 2px solid #d2d1d6;
         font-size: 1.5rem;
         font-weight: 500;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
     }
 
     &__heading {
         text-transform: uppercase;
         font-weight: 900;
         font-size: 1.8rem;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__list {
@@ -123,6 +167,11 @@
         transition: translate, filter;
         transition-duration: 0.25s;
 
+        @include abstracts.screen(sm) {
+            width: 42px;
+            height: 42px;
+        }
+
         &--facebook {
             background: #4863a9;
         }
@@ -153,5 +202,9 @@
         width: 14px;
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg) brightness(99%)
             contrast(99%);
+
+            @include abstracts.screen(sm) {
+                width: 18px;
+            }
     }
 }
