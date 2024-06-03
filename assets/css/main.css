@@ -168,7 +168,7 @@ button,
 textarea,
 select,
 a,
-img {
+img, label {
   padding: 0;
   font-family: inherit;
   font-size: inherit;
@@ -1312,6 +1312,20 @@ input {
   }
   .d-sm-none {
     display: none !important;
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
 html.dark {
@@ -2559,12 +2573,27 @@ html {
   }
 }
 
+.form:has(:invalid) .form__submit-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .form__group {
   margin-top: 30px;
 }
 .form__group--inline {
   display: flex;
   align-items: center;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
+  border-color: red;
+  background: rgba(255, 0, 0, 0.1);
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error,
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon--error {
+  display: block;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon--filter {
+  display: none;
 }
 .form__text-input {
   padding: 0 12px;
@@ -2585,23 +2614,38 @@ html {
   line-height: 1.44; /* 144.444% */
 }
 .form__input-icon {
+  width: 18px;
+  height: 20px;
+  object-fit: contain;
   margin-left: 12px;
+}
+.form__input-icon--error {
+  display: none;
+  animation: shake 0.8s;
 }
 .form__input::placeholder {
   color: #d2d1d6;
 }
-.form__input:not(:placeholder-shown) ~ .form__input-icon {
+.form__input:not(:placeholder-shown) ~ .form__input-icon--filter {
   filter: var(--form__input-icon-filter);
 }
-.form__pull-rigth {
+.form__error {
+  display: none;
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 10px;
+  color: red;
+}
+.form__pull-right {
   margin-left: auto;
 }
 .form__checkbox {
   margin-left: 30px;
   display: flex;
   align-items: center;
-  gap: 10px;
   cursor: pointer;
+  user-select: none;
 }
 .form__checkbox-label {
   position: relative;

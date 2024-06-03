@@ -1,10 +1,30 @@
 .form {
+    &:has(:invalid) &__submit-btn {
+        opacity: 0.5;
+        pointer-events: none;
+    }
     &__group {
         margin-top: 30px;
 
         &--inline {
             display: flex;
             align-items: center;
+        }
+    }
+
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+        .form__text-input {
+            border-color: red;
+            background: rgba($color: red, $alpha: 0.1);
+        }
+
+        .form__error,
+        .form__input-icon--error {
+            display: block;
+        }
+
+        .form__input-icon--filter {
+            display: none;
         }
     }
 
@@ -29,19 +49,36 @@
         line-height: 1.44; /* 144.444% */
 
         &-icon {
+            width: 18px;
+            height: 20px;
+            object-fit: contain;
             margin-left: 12px;
+
+            &--error {
+                display: none;
+                animation: shake 0.8s;
+            }
         }
 
         &::placeholder {
             color: #d2d1d6;
         }
 
-        &:not(:placeholder-shown) ~ &-icon {
+        &:not(:placeholder-shown) ~ &-icon--filter {
             filter: var(--form__input-icon-filter);
         }
     }
 
-    &__pull-rigth {
+    &__error {
+        display: none;
+        text-align: left;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-top: 10px;
+        color: red;
+    }
+
+    &__pull-right {
         margin-left: auto;
     }
 
@@ -49,8 +86,8 @@
         margin-left: 30px;
         display: flex;
         align-items: center;
-        gap: 10px;
         cursor: pointer;
+        user-select: none;
 
         &-label {
             position: relative;
