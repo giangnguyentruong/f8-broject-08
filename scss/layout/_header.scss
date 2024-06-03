@@ -178,6 +178,14 @@
         margin-left: 0;
     }
 
+    @include abstracts.screen(md) {
+        &__sign-up.lv1 {
+            height: 40px;
+            padding: 0 8px;
+            font-size: 1.5rem;
+        }
+    }
+
     &__group {
         @extend %flexItemsCenter;
 
