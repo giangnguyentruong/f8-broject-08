@@ -1,0 +1,102 @@
+.form {
+    &__group {
+        margin-top: 30px;
+
+        &--inline {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__text-input {
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        height: 50px;
+        border: 1.5px solid #d2d1d6;
+
+        &:focus-within {
+            border-color: #77dae6;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        height: 100%;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.44; /* 144.444% */
+
+        &-icon {
+            margin-left: 12px;
+        }
+
+        &::placeholder {
+            color: #d2d1d6;
+        }
+
+        &:not(:placeholder-shown) ~ &-icon {
+            filter: var(--form__input-icon-filter);
+        }
+    }
+
+    &__pull-rigth {
+        margin-left: auto;
+    }
+
+    &__checkbox {
+        margin-left: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        &-label {
+            position: relative;
+            color: #9e9da8;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.46; /* 146.667% */
+
+            &::before,
+            &::after {
+                position: absolute;
+                display: inline-block;
+                content: "";
+            }
+
+            &::before {
+                width: 18px;
+                height: 18px;
+                top: 50%;
+                translate: 0 -50%;
+                left: -30px;
+                border: 2px solid #9e9da8;
+                border-radius: 4px;
+            }
+
+            &::after {
+                display: none;
+                width: 12px;
+                height: 10px;
+                top: 50%;
+                translate: 0 -78%;
+                left: -27.5px;
+                border-top: 2px solid #fff;
+                border-right: 2px solid #fff;
+                rotate: 135deg;
+            }
+            // form__checkbox-label-end
+        }
+
+        &:has(> &-input:checked) &-label::before {
+            background-color: rgb(0, 153, 255);
+            border-color: rgb(0, 153, 255);
+        }
+
+        &:has(> &-input:checked) &-label::after {
+            display: inline-block;
+        }
+    }
+}

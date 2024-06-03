@@ -11,7 +11,7 @@ html {
     --separate-bg-color: #ededf6;
 
     @include abstracts.screen(xl) {
-        --header-bg-color: #fff;
+        --header-bg-color: var(--top-act-bg-color);
     }
 
     @include abstracts.screen(lg) {
@@ -19,36 +19,41 @@ html {
     }
 
     // Dropdown
-    --dropdown-bg-color: #fff;
+    --dropdown-bg-color: var(--top-act-bg-color);
     --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
     --top-menu-border-color: #d2d1d6;
 
     // Sidebar
-    --sidebar-bg: #fff;
+    --sidebar-bg: var(--top-act-bg-color);
     --sidebar-shadow: rgba(200, 200, 200, 0.4);
 
     // Category item
     --cate-item-bg: #eee;
-    --cate-item-thumb-bg: #fff;
+    --cate-item-thumb-bg: var(--top-act-bg-color);
     --cate-item-title-color: #000;
 
     @include abstracts.screen(md) {
-        --cate-item-bg: #fff;
+        --cate-item-bg: var(--top-act-bg-color);
     }
 
     // Buttons
     --filter-btn-color: #6c6c72;
-    --filter-btn-bg: #fff;
+    --filter-btn-bg: var(--top-act-bg-color);
 
     // Product card
-    --product-card-bg: #fff;
+    --product-card-bg: var(--top-act-bg-color);
     --product-card-shadow: rgba(237, 237, 246, 0.2);
 
     // Filter form
-    --filter-form-bg: #fff;
+    --filter-form-bg: var(--top-act-bg-color);
     --filter-form-shadow: rgba(200, 200, 200, 0.4);
     --filter-form-tag-bg: #f8f8fb;
 
     // Footer
-    --footer-bg-color: #eee
+    --footer-bg-color: #eee;
+
+    // Auth
+    --auth-content-bg: #fff;
+    --form__input-icon-filter: brightness(0) saturate(100%) invert(5%) sepia(42%) saturate(2706%) hue-rotate(232deg)
+        brightness(91%) contrast(92%);
 }

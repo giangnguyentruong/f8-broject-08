@@ -54,4 +54,9 @@ html.dark {
     // Footer
     --footer-bg-color: var(--header-bg-color);
     --footer-text-color: #9e9da6;
+
+    // Auth
+    --auth-content-bg: var(--body-bg-color);
+    --form__input-icon-filter: brightness(0) saturate(100%) invert(94%) sepia(7%) saturate(106%) hue-rotate(212deg)
+        brightness(89%) contrast(91%);
 }
