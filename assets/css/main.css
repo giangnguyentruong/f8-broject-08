@@ -1373,6 +1373,7 @@ html.dark {
   --btn-icon-color: brightness(0) saturate(100%) invert(74%) sepia(30%) saturate(23%) hue-rotate(190deg)
       brightness(94%) contrast(98%);
   --form-placeholder-color: #b9babe;
+  --auth-message-color: #b9babe;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -2724,6 +2725,19 @@ html {
   display: inline-block;
 }
 
+.message {
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+.message--success {
+  border: 1.5px solid #c76760;
+  background: rgba(255, 120, 61, 0.2);
+}
+
 .home {
   margin-bottom: 50px;
 }
@@ -2793,6 +2807,7 @@ html {
   bottom: 50px;
 }
 .auth__intro-img {
+  width: var(--width);
   max-width: 100%;
 }
 .auth__intro-text {
@@ -2865,6 +2880,10 @@ html {
     font-size: 1.4rem;
   }
 }
+.auth__message {
+  margin-top: 30px;
+  color: var(--auth-message-color);
+}
 .auth__form {
   margin-top: 30px;
   width: 100%;
@@ -2873,6 +2892,9 @@ html {
   .auth__form {
     margin-top: 0;
   }
+}
+.auth__form-forgot {
+  margin-top: 10px;
 }
 .auth__link {
   color: #0071dc;

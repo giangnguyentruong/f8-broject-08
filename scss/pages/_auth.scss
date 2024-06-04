@@ -38,6 +38,7 @@
         }
 
         &-img {
+            width: var(--width);
             max-width: 100%;
         }
 
@@ -113,12 +114,21 @@
         }
     }
 
+    &__message {
+        margin-top: 30px;
+        color: var(--auth-message-color);
+    }
+
     &__form {
         margin-top: 30px;
         width: 100%;
 
         @include abstracts.screen(md) {
             margin-top: 0;
+        }
+
+        &-forgot {
+            margin-top: 10px;
         }
     }
 
@@ -167,7 +177,6 @@
     .btn__icon {
         filter: var(--btn-icon-color);
     }
-
 
     &__text {
         margin-top: 108px;
