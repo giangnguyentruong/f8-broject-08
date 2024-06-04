@@ -10,7 +10,7 @@ html {
     --top-act-shadow: rgba(237, 237, 246, 0.2);
     --separate-bg-color: #ededf6;
 
-    @include abstracts.screen(xl) {
+    @include abstracts.screen(lg) {
         --header-bg-color: var(--top-act-bg-color);
     }
 

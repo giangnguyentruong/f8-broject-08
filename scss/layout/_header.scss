@@ -29,6 +29,24 @@
     @include abstracts.screen(sm) {
         padding: 16px 0;
     }
+
+    &__logo {
+        @include abstracts.screen(lg) {
+            column-gap: 10px !important;
+        }
+
+        &-title {
+            @include abstracts.screen(lg) {
+                font-size: 1.8rem !important;
+            }
+        }
+
+        &-img {
+            @include abstracts.screen(lg) {
+                width: 24px;
+            }
+        }
+    }
 }
 
 .navbar {
