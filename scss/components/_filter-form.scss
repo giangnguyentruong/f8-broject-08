@@ -193,7 +193,7 @@
     }
 
     &__content {
-        max-height: calc(100vh - 360px);
+        max-height: calc(100vh - 340px);
         overflow-y: auto;
         overscroll-behavior: contain;
         @include abstracts.screen(xl) {

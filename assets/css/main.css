@@ -1420,6 +1420,8 @@ html {
   --auth-btn-text-color: #1a162e;
   --form-placeholder-color: #d2d1d6;
   --product-detail-bg: #fff;
+  --prod-info-bg: #f6f6f6;
+  --prod-info-tag-color: #ededf6;
   --breadcrumbs-bg: #f6f6f6;
   --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
 }
@@ -2522,7 +2524,7 @@ html {
   padding: 0 30px;
 }
 .filter__content {
-  max-height: calc(100vh - 360px);
+  max-height: calc(100vh - 340px);
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -3055,6 +3057,7 @@ html {
 
 .prod-info {
   padding: 60px;
+  background: var(--prod-info-bg);
 }
 .prod-info__heading {
   font-size: 2.6rem;
@@ -3063,6 +3066,50 @@ html {
 }
 .prod-info__label {
   margin-top: 30px;
+}
+.prod-info__tag {
+  background: var(--prod-info-tag-color);
+}
+.prod-info__card {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #b9babe;
+}
+.prod-info__row {
+  display: flex;
+  align-items: center;
+}
+.prod-info__price {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5; /* 150% */
+}
+.prod-info__tax {
+  margin-left: 10px;
+  padding: 2px 8px;
+  color: #67b044;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+  line-height: 1.42; /* 142.857% */
+}
+.prod-info__total-price {
+  margin: 20px 0;
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1.38; /* 138.462% */
+}
+.prod-info__add-to-card {
+  flex: 1;
+}
+.prod-info__like-btn {
+  margin-left: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  border: 1px solid #d2d1d6;
+  background: transparent;
 }
 
 .prod-props {
