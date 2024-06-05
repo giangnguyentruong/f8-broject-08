@@ -72,6 +72,14 @@
         font-weight: 500;
         line-height: 1.38; /* 138.462% */
     }
+
+    &__label {
+        margin-top: 30px;
+    }
+}
+
+.prod-props {
+    padding-left: 30px;
 }
 
 .prod-prop {
@@ -92,6 +100,6 @@
     &__desc {
         margin-top: 4px;
         font-size: 1.4rem;
-        line-height: 1.42   ; /* 142.857% */
+        line-height: 1.42; /* 142.857% */
     }
 }
