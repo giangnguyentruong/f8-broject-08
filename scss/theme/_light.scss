@@ -12,9 +12,6 @@ html {
 
     @include abstracts.screen(lg) {
         --header-bg-color: #fff;
-    }
-
-    @include abstracts.screen(lg) {
         --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 
@@ -71,7 +68,16 @@ html {
     --prod-info-bg: #f6f6f6;
     --prod-info-tag-color: #ededf6;
 
+    @include abstracts.screen(md) {
+        --product-detail-bg: #fafafd;
+        --prod-info-bg: #fff;
+    }
+
     // Breadcrumbs
     --breadcrumbs-bg: #f6f6f6;
     --breadcrumbs-shadow: rgba(237, 237, 246, 0.2);
+
+    @include abstracts.screen(md) {
+        --breadcrumbs-bg: #fff;
+    }
 }
