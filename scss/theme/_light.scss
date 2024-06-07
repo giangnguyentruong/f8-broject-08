@@ -66,11 +66,13 @@ html {
     // Product detail
     --product-detail-bg: #fff;
     --prod-info-bg: #f6f6f6;
-    --prod-info-tag-color: #ededf6;
+    --prod-info-tag-bg: #ededf6;
+    --product-detail-info-content-bg: #fff;
 
     @include abstracts.screen(md) {
         --product-detail-bg: #fafafd;
         --prod-info-bg: #fff;
+        --product-detail-info-content-shadow: rgba(237, 237, 246, 0.2);
     }
 
     // Breadcrumbs
@@ -80,4 +82,7 @@ html {
     @include abstracts.screen(md) {
         --breadcrumbs-bg: #fff;
     }
+
+    // Search-bar
+    --search-bar-bg: #fff;
 }
