@@ -139,6 +139,10 @@ table {
   box-sizing: border-box;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -168,14 +172,14 @@ button,
 textarea,
 select,
 a,
-img, label {
+img,
+label {
   padding: 0;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
   outline: none;
   border: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
 input {
@@ -193,11 +197,13 @@ input {
   }
 }
 
-i, em {
+i,
+em {
   font-style: italic;
 }
 
-b, strong {
+b,
+strong {
   font-weight: 600;
 }
 
@@ -1473,6 +1479,11 @@ html {
 @media (max-width: 767.98px) {
   html {
     --breadcrumbs-bg: #fff;
+  }
+}
+@media (max-width: 767.98px) {
+  html {
+    --review-card-bg: #fff;
   }
 }
 
@@ -2844,13 +2855,31 @@ html {
 }
 
 .review-card {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   border-radius: 16px;
   background: var(--review-card-bg);
+  height: 100%;
 }
 .review-card__content {
   display: flex;
   gap: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1199.98px) {
+  .review-card__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 767.98px) {
+  .review-card__content {
+    flex-direction: row;
+    align-items: center;
+    text-align: initial;
+  }
 }
 .review-card__avatar {
   width: 80px;
@@ -2868,16 +2897,37 @@ html {
   line-height: 1.5; /* 150% */
 }
 .review-card__rating {
-  margin-top: 20px;
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+@media (max-width: 1199.98px) {
+  .review-card__rating {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767.98px) {
+  .review-card__rating {
+    flex-direction: row;
+    gap: 12px;
+  }
 }
 .review-card__rating-title {
   margin-left: 12px;
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.44; /* 144.444% */
+}
+@media (max-width: 1199.98px) {
+  .review-card__rating-title {
+    margin-left: 0;
+  }
+}
+.review-card__star-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .text-content {
@@ -3377,8 +3427,14 @@ html {
 }
 
 .prod-tab__list {
-  margin-left: -30px;
+  margin: 0 -30px;
   display: flex;
+}
+@media (max-width: 767.98px) {
+  .prod-tab__list {
+    margin: 0 -20px;
+    flex-wrap: wrap;
+  }
 }
 .prod-tab__item {
   padding: 0 30px;
@@ -3386,6 +3442,17 @@ html {
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 1.45; /* 145.455% */
+  user-select: none;
+  white-space: nowrap;
+}
+@media (max-width: 767.98px) {
+  .prod-tab__item {
+    padding: 8px 20px;
+    font-size: 1.8rem;
+  }
+}
+.prod-tab__item:not(.prod-tab__item--current) {
+  cursor: pointer;
 }
 .prod-tab__item--current {
   color: inherit;
