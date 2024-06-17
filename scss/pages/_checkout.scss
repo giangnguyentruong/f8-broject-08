@@ -291,6 +291,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 16px;
+
+        @include abstracts.screen(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__tittle {
@@ -307,12 +313,33 @@
 
     &__btn {
         gap: 10px;
+
+        @include abstracts.screen(md) {
+            height: 46px;
+        }
+    }
+
+    &__list {
+    }
+
+    &__message {
+        margin-top: 30px;
+        font-weight: 500;
+    }
+
+    &__link {
+        color: #0071dc;
     }
 }
 
 .address-card {
     margin-top: 30px;
     display: flex;
+
+    @include abstracts.screen(md) {
+        flex-direction: column;
+        gap: 16px;
+    }
 
     &__left {
         flex: 1;
@@ -333,6 +360,7 @@
         margin-top: 4px;
         font-size: 1.5rem;
         line-height: 1.46; /* 146.667% */
+        width: min(520px, 90%);
     }
 
     &__list {
@@ -343,6 +371,11 @@
         line-height: 1.42; /* 142.857% */
         list-style: disc;
         list-style-position: inside;
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            gap: 16px;
+        }
 
         &-item {
             margin-left: 8px;
@@ -360,6 +393,24 @@
             gap: 10px;
             font-size: 1.8rem;
             line-height: 1.44; /* 144.444% */
+        }
+    }
+
+    &__checkbox {
+        &-input {
+            appearance: none;
+
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
         }
     }
 }
