@@ -42,7 +42,7 @@
 
     &__body {
         padding-right: 20px;
-        max-height: calc(100vh - 200px);
+        max-height: calc(100vh - 108px);
         overflow-y: auto;
     }
 
@@ -56,11 +56,14 @@
         position: relative;
         z-index: 1;
         width: min(var(--content-width, 800px), 100% - 40px);
-
-        padding: 30px;
+        padding: 30px 10px 30px 30px;
         border-radius: 20px;
         box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
         background: var(--dialog-bg);
+
+        @include abstracts.screen(md) {
+            padding: 20px 0 20px 20px;
+        }
     }
 
     &--small &__content {
@@ -83,26 +86,26 @@
     }
 
     &__bottom {
+        padding-right: 20px;
         margin-top: 30px;
-
         display: flex;
         align-items: center;
         justify-content: flex-end;
         gap: 30px;
         flex-wrap: wrap;
+
+        @include abstracts.screen(md) {
+            gap: 20px;
+        }
+
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
     }
 
-    @include abstracts.screen(md) {
-        &__content {
-            padding: 20px;
-        }
-
-        &__btn {
+    &__btn {
+        @include abstracts.screen(md) {
             flex: 1;
-        }
-
-        &__bottom {
-            gap: 20px;
         }
     }
 }

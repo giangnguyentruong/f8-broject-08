@@ -442,11 +442,11 @@
         </div>
 
         <!--  Modal: address new shopping address -->
-        <div id="add-new-address" class="modal hide" style="--content-width: 650px">
+        <div id="add-new-address" class="modal show" style="--content-width: 650px">
             <div class="modal__content">
-                <h2 class="modal__heading">Add new shopping address</h2>
-                <div class="modal__body">
-                    <form action="" class="form">
+                <form action="" class="form">
+                    <h2 class="modal__heading">Add new shipping address</h2>
+                    <div class="modal__body">
                         <div class="form__row">
                             <div class="form__group">
                                 <label for="name" class="form__label form__label--small"> Name </label>
@@ -480,7 +480,7 @@
                                         id="phone"
                                         placeholder="Phone"
                                         class="form__input"
-                                        minlength="11"
+                                        minlength="10"
                                     />
                                     <img
                                         src="./assets/icons/form-error.svg"
@@ -534,22 +534,17 @@
                                 </label>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal__bottom">
-                    <button
-                        class="btn btn-no-margin btn--small btn--text modal__btn js-toggle"
-                        toggle-target="#add-new-address"
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        class="btn btn-no-margin btn--small btn--primary modal__btn js-toggle"
-                        toggle-target="#add-new-address"
-                    >
-                        Create
-                    </button>
-                </div>
+                    </div>
+                    <div class="modal__bottom">
+                        <button
+                            class="btn btn-no-margin btn--small btn--text modal__btn js-toggle"
+                            toggle-target="#add-new-address"
+                        >
+                            Cancel
+                        </button>
+                        <button class="btn btn-no-margin btn--small btn--primary modal__btn">Create</button>
+                    </div>
+                </form>
             </div>
             <div class="modal__overlay"></div>
         </div>
