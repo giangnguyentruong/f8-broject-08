@@ -7,6 +7,16 @@ $error-color: #ed4337;
         opacity: 0.5;
         pointer-events: none;
     }
+
+    &__row {
+        display: flex;
+        gap: 30px;
+
+        > * {
+            flex: 1;
+        }
+    }
+
     &__group {
         margin-top: 30px;
 
@@ -36,16 +46,16 @@ $error-color: #ed4337;
         }
     }
 
+    &__text-area,
     &__text-input {
-        padding: 0 12px;
         display: flex;
         align-items: center;
+        padding: 0 12px;
         border-radius: 10px;
-        height: 50px;
         border: 1.5px solid #d2d1d6;
 
-        @include abstracts.screen(md) {
-            height: 48px;
+        &--small {
+            border-radius: 8px;
         }
 
         &:focus-within {
@@ -53,17 +63,46 @@ $error-color: #ed4337;
         }
     }
 
-    &__input {
+    &__text-input {
+        height: 50px;
+
+        &--small {
+            height: 42px;
+        }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
+    }
+
+    &__text-area {
+        padding: 12px;
+        height: 100px;
+
+        &-input {
+            resize: none;
+            width: 100%;
+        }
+    }
+
+    &__input,
+    &__text-area-input {
         flex: 1;
         height: 100%;
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 1.44; /* 144.444% */
 
+        &::placeholder {
+            color: var(--form-placeholder-color);
+        }
+
         @include abstracts.screen(md) {
             font-size: 1.6rem;
         }
+    }
 
+    &__input {
         &-icon {
             width: 24px;
             height: 24px;
@@ -74,10 +113,6 @@ $error-color: #ed4337;
                 display: none;
                 animation: shake 0.5s;
             }
-        }
-
-        &::placeholder {
-            color: var(--form-placeholder-color);
         }
 
         &:not(:placeholder-shown) ~ &-icon--filter {
