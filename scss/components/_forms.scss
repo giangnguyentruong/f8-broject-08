@@ -73,6 +73,7 @@ $error-color: #ed4337;
     }
 
     &__text-input {
+        position: relative;
         height: 50px;
 
         &--small {
@@ -126,6 +127,67 @@ $error-color: #ed4337;
 
         &:not(:placeholder-shown) ~ &-icon--filter {
             filter: var(--form__input-icon-filter);
+        }
+    }
+
+    &__select-dialog {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 44px;
+        left: 10px;
+        max-height: 310px;
+        min-width: 230px;
+        background: #fff;
+        padding: 10px 0;
+        border: 1px solid #d2d1d6;
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 -8px;
+        transition: opacity visibility translate;
+        transition-duration: 0.1s;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            translate: 0;
+        }
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #d2d1d6;
+        padding: 0 20px 10px;
+
+        &-input {
+            flex: 1;
+        }
+
+        &-icon {
+            width: 16px;
+        }
+    }
+
+    &__options-list {
+        margin-top: 10px;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    &__option {
+        padding: 8px 20px;
+        font-size: 1.4rem;
+
+        &--current {
+            font-weight: 500;
+            background: rgba($color: #ffb700, $alpha: 0.5);
+        }
+
+        &:not(&--current):hover {
+            background: #ebebeb;
+            cursor: pointer;
         }
     }
 
