@@ -164,6 +164,13 @@ $error-color: #ed4337;
         }
     }
 
+    &__dialog-heading {
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 14px;
+    }
+
     &__close-dialog {
         font-size: 3rem;
         position: absolute;
@@ -182,27 +189,20 @@ $error-color: #ed4337;
         height: 38px;
 
         @include abstracts.screen(sm) {
-            margin-top: 30px;
-            flex-direction: row-reverse;
+            margin: 10px;
+            border: 1px solid #d2d1d6;
+            border-radius: 10px;
         }
 
         &-input {
             flex: 1;
             height: 100%;
             font-size: 1.6rem;
-
-            @include abstracts.screen(sm) {
-                padding-left: 8px;
-            }
         }
 
         &-icon {
             margin-left: 10px;
             width: 16px;
-
-            @include abstracts.screen(sm) {
-                margin-left: 0;
-            }
         }
 
         @include abstracts.screen(lg) {
@@ -290,9 +290,9 @@ $error-color: #ed4337;
                 height: 10px;
                 top: 50%;
                 translate: 0 -78%;
-                left: -27.5px;
-                border-top: 2px solid #fff;
-                border-right: 2px solid #fff;
+                left: -27px;
+                border-top: 3px solid #fff;
+                border-right: 3px solid #fff;
                 rotate: 135deg;
             }
             // form__checkbox-label-end
