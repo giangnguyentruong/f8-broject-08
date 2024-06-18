@@ -30,6 +30,12 @@
         padding: 16px 0;
     }
 
+    &__more {
+        &-icon {
+            padding: 15px;
+        }
+    }
+
     &__logo {
         @include abstracts.screen(lg) {
             column-gap: 10px !important;

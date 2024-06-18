@@ -3,7 +3,8 @@
 .auth {
     display: flex;
     min-height: 100vh;
-
+    
+// Xác định kiểu điện thoại IOS
     @supports (-webkit-touch-callout: none) {
         min-height: -webkit-fill-available;
     }
