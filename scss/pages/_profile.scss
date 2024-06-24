@@ -1,4 +1,6 @@
 .profile {
+    margin-bottom: 50px;
+
     &-container {
         margin-top: 30px;
     }
@@ -87,6 +89,10 @@
             width: 24px;
             height: 100%;
         }
+    }
+
+    &__desc {
+        margin-bottom: 16px;
     }
 }
 //End .profile
