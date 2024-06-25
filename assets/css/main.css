@@ -1369,7 +1369,7 @@ html.dark {
   --header-bg-color: #171c28;
   --top-act-bg-color: #292e39;
   --top-act-shadow: rgba(0, 0, 0, 0.2);
-  --separate-bg-color: #ededf6;
+  --separate-bg-color: #545458;
   --header-act-dropdown-bg: #2f3441;
   --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
   --header-act-dropdown-border-color: #171c28;
@@ -1569,7 +1569,7 @@ html {
 .top-bar {
   position: relative;
   z-index: 1;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 @media (max-width: 991.98px) {
   .top-bar {
@@ -2174,7 +2174,7 @@ html {
 
 .dropdown {
   color: var(--dropdown-text-color);
-  padding-top: 54px;
+  padding-top: 38px;
   position: absolute;
   left: 0;
   width: min(1240px, 100%);
@@ -2360,7 +2360,7 @@ html {
 }
 .slideshow__item {
   position: relative;
-  padding-top: 34%;
+  padding-top: 26%;
   width: 100%;
   flex-shrink: 0;
 }
@@ -2440,7 +2440,7 @@ html {
   gap: 20px;
   align-items: center;
   height: 100%;
-  padding: 20px 26px;
+  padding: 20px;
   border-radius: 16px;
   background: var(--cate-item-bg);
 }
@@ -2455,8 +2455,8 @@ html {
   }
 }
 .cate-item__thumb {
-  width: 116px;
-  height: 116px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   border-radius: 8px;
   background: var(--cate-item-thumb-bg);
@@ -2878,7 +2878,7 @@ html {
 }
 .form__text-input {
   position: relative;
-  height: 50px;
+  height: 48px;
 }
 .form__text-input--small {
   height: 42px;
