@@ -1,0 +1,12 @@
+.form-card {
+    &__label {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}

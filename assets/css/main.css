@@ -4113,7 +4113,15 @@ html {
   justify-content: space-between;
   gap: 30px;
 }
+.cart-info__back-arrow {
+  position: relative;
+  top: 2px;
+  padding-right: 20px;
+  width: 44px;
+}
 .cart-info__heading {
+  display: flex;
+  align-items: center;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.41; /* 141.667% */
@@ -4665,6 +4673,16 @@ html {
 }
 .profile__desc {
   margin-bottom: 16px;
+}
+
+.form-card__label {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+.form-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=main.css.map */
